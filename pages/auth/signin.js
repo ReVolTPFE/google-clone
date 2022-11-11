@@ -20,7 +20,7 @@ export default function signin({providers}) {
 
 						<p className="italic my-10">This website is created for learning purposes</p>
 
-						<button onClick={() => signIn(provider.id, { callbackUrl: "/" })} className="py-2 px-4 bg-blue-500 rounded text-white hover:bg-blue-600">Sign in with {provider.name}</button>
+						<button onClick={() => signIn(provider.id, { callbackUrl: "/" })} className="blue-btn">Sign in with {provider.name}</button>
 					</div>
 				))}
 			</div>

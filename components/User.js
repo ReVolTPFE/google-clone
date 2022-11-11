@@ -17,7 +17,7 @@ export default function User() {
 		);
 	} else {
 		return (
-			<button onClick={signIn} className="py-2 px-4 bg-blue-500 rounded text-white hover:bg-blue-600">Sign in</button>
+			<button onClick={signIn} className="blue-btn">Sign in</button>
 		);
 	}
 }
