@@ -1,7 +1,5 @@
 export default function User() {
 	return (
-		<div>
-			User
-		</div>
-	)
+		<a href="#" className="link">User</a>
+	);
 }

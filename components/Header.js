@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import User from './User'
+import Image from 'next/image';
+import User from './User';
 
 export default function Header() {
 	return (
@@ -15,5 +15,5 @@ export default function Header() {
 				<User/>
 			</div>
 		</header>
-	)
+	);
 }
