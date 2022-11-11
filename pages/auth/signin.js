@@ -8,7 +8,7 @@ export default function signin({providers}) {
 		<>
 			<Header/>
 
-			<div>
+			<main>
 				{Object.values(providers).map(provider => (
 					<div key={provider.name} className="flex justify-center items-center flex-col mt-10">
 						<Image 
@@ -23,7 +23,7 @@ export default function signin({providers}) {
 						<button onClick={() => signIn(provider.id, { callbackUrl: "/" })} className="blue-btn">Sign in with {provider.name}</button>
 					</div>
 				))}
-			</div>
+			</main>
 		</>
 	);
 }
