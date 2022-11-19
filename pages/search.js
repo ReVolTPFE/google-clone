@@ -1,17 +1,25 @@
 import Head from "next/head";
 import SearchHeader from "../components/SearchHeader";
 import Response from "../Response";
+import SearchResults from "../components/SearchResults";
+import { useRouter } from "next/router";
 
 export default function search({results}) {
+	const router = useRouter();
+
 	return (
 		<>
 			<Head>
-				<title>Search page</title>
+				<title>{router.query.term} - Search page</title>
 				<meta name="description" content="Google browser clone used for learning purposes" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<SearchHeader />
+
+			<main className="px-4 py-8 md:px-52">
+				<SearchResults results={results} />
+			</main>
 		</>
 	);
 }
