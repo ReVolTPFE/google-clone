@@ -26,11 +26,13 @@ export default function search({results}) {
 
 //? back end call to google api
 export async function getServerSideProps(context) {
+	const startIndex = Number(context.query.start || "1");
+
 	//? we are limited to 100 requests in a day so we use the mock data in development
 	const mockData = true;
 
 	const data = mockData ? Response : await fetch(
-		`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}${context.query.searchType && "&searchType=image"}`
+		`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}${context.query.searchType && "&searchType=image"}&start=${startIndex}`
 	).then(
 		(response) => response.json()
 	);
